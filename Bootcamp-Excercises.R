@@ -79,4 +79,9 @@ dim(x) <- c(3,9)
 is.array(x)
 is.matrix(x)
 x
-##the vector transforms into an array
+##the vector transforms into an array, which arranges in a matrix.
+
+### 11.0.0.0.1 ###
+Y <- X
+
+
