@@ -82,6 +82,123 @@ x
 ##the vector transforms into an array, which arranges in a matrix.
 
 ### 11.0.0.0.1 ###
-Y <- X
+##In separate file
+
+### 11.0.0.2 ###
+##In spearate file
+
+### 11.0.0.3 ###
+plot(rmax~light,data=X,xlab="light intensity (uE/m2/s)",ylab="maximum growth rate (1/d)",xlim=c(0,120),ylim=c(1,4),pch=16)
+
+###11.0.0.4 Excercise ###
+##In separate file
+
+### 11.0.0.5 ###
+x <- 3:8
+y <- 5*x+3
+?par
+par(mfcol=c(2,2))
+plot(y~x, type = "l", lty = 2, col =5)
+plot(y~x, type = "l", lty=1, col=50)
+plot(y~x, type = "l", lty=3, col=20)
+plot(y~x, type = "l", lty=4, col=26)
+
+###11.0.0.6 ###
+?dev.print
+dev.print(pdf,"Practice.pdf")
+dev.off
+
+### 12.0.0.1 ###
+a <- 1.1
+b <- 0.001
+T <- seq(from=1,to=200,by=1)
+N <- numeric(length(T))
+n <- 2
+N <- numeric(length(T))
+for (t in 1:length(T)) {
+  n <- a*n/(1+b*n)
+  N[t] <- n
+}
+plot(T,N)
+
+### 12.0.0.2 ###
+a <- 1.1
+b <- 0.001
+T <- seq(from=1,to=200,by=1)
+N <- numeric(length(T))
+n <- 2
+
+N <- numeric(length(T))
+for (t in 1:length(T)) {
+  n <- a*n/(1+b*n)
+  N[t] <- n
+}
+plot(T,N)
+
+##different vector of T
+a <- 1.1
+b <- 0.001
+T <- seq(from=1,to=10,by=1)
+N <- numeric(length(T))
+n <- 2
+for (t in 1:length(T)) {
+  n <- a*n/(1+b*n)
+  N[t] <- n
+}
+plot(T,N)
+plot(T,N, ylim = c(0,100))
+##T length of 1
+T <- 3
+N <- numeric(length(T))
+n <- 2
+for (t in 1:length(T)) {
+  n <- a*n/(1+b*n)
+  N[t] <- n
+}
+plot(T,N)
+##I get one data point on the graph
+
+##T length of 0
+T <- c()
+N <- numeric(length(T))
+n <- 2
+for (t in 1:length(T)) {
+  n <- a*n/(1+b*n)
+  N[t] <- n
+}
+plot(T,N)
+##The lengths differ 
 
 
+### 12.2.0.0.1 ###
+phi <- 20
+conv <- FALSE
+k <- 1
+while (!conv) {
+  phi.new <- 1+1/phi
+  k <- k+1
+  print(c(k,phi))
+  conv <- phi==phi.new
+  phi <- phi.new
+  }
+##it takes 41 iterations
+
+### 12.2.0.0.2 ###
+phi <- 20
+k <- 1
+while (TRUE) {
+  phi.new <- 1+1/phi
+  k <- k+1
+  print(c(k,phi))
+  if (phi==phi.new) break
+  phi <- phi.new
+}
+phi <- 3
+k <- 1
+for (k in seq_len(1000)) {
+  phi.new <- 1+1/phi
+  k <- k+1
+  print(c(k,phi))
+  if (phi==phi.new) break
+  phi <- phi.new
+}
