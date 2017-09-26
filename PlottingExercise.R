@@ -26,5 +26,4 @@ hist(mean_heights_100,breaks=bins)$breaks
 hist(mean_heights_1000,breaks = bins)$breaks
 counts_100<-hist(mean_heights_100,breaks=bins)$counts
 counts_1000 <- hist(mean_heights_1000,breaks=bins)$counts
-barplot(rbind(counts_100,counts_1000), col = c(2,4), beside = T, xlab= "Average height(inches)", ylab = "Counts")
-axis(1,at = NULL, labels = TRUE, tick = TRUE)
+barplot(rbind(counts_100,counts_1000), col = c(2,4), beside = T, xlab= "Average height(inches)", ylab = "Counts", names.arg = seq(65,74.5,0.5))
