@@ -109,3 +109,24 @@ for (j in 1:5){
     compounded[i] <-  interestRate*bankAccounts[i] + bankAccounts[i]
   }}}
 
+### Exercise 8 ###
+X <- 0
+mysum=0
+while(X <= 17){
+  mysum <- mysum + X
+  X <- X + 1 
+}
+mysum
+
+### Exercise 9 ###
+size <- function(x,arg1)
+{if (x < -1){
+  cat('small')
+}
+  if(x >= 1){
+    cat('big')}
+  else{
+    cat('medium')
+  }
+}
+
